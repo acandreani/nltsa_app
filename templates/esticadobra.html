@@ -19,8 +19,10 @@
 
  
 
-  <button style="padding:20px 20px 20px 20px; font-size: large; " onclick="window.app.stretch();window.app.fold();"> Estica e dobra</button>
-<button style="padding:20px 20px 20px 20px; font-size: large; " onclick="window.app.generateAnimation();">Download animation</button>
+  <button style="padding:20px 20px 20px 20px; font-size: large; " onclick="window.app.disableInputs();window.app.stretch();window.app.fold();"> Estica e dobra</button>
+  <button style="padding:20px 20px 20px 20px; font-size: large; " onclick="window.app.reset();"> Reinicia</button>
+<button style="padding:20px 20px 20px 20px; font-size: large; "onclick="window.app.disableInputs();window.app.generateAnimation();window.app.reset();">Download animation</button>
+
   </div>
 
   <div>
@@ -354,6 +356,23 @@ class App {
 
   }
 
+  reset(){
+
+    this.init();
+    document.getElementById("heigth").disabled = false;
+    document.getElementById("heigth").value=400;
+
+    document.getElementById("width").disabled = false;
+    document.getElementById("width").value=400;
+
+
+  }
+
+  disableInputs(){
+
+    document.getElementById("heigth").disabled = true;
+    document.getElementById("width").disabled = true;
+  }
   fold(){
     this.mass.fold(2);
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
