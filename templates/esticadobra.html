@@ -333,12 +333,14 @@ class App {
     //Always check for properties and methods, to make sure your code doesn't break in other browsers.
     var center={x:200,y:900};
 
-    this.mass=new Mass(this.canvas,400,400);
+    var height=parseInt(document.getElementById("heigth").value)
+    var width=parseInt(document.getElementById("width").value)
+    this.mass=new Mass(this.canvas,height,width);
 
     this.mass.draw();
     this.borderSize=25;
     // this.setLength(400);
-    this.setWidth(400);
+    this.setWidth(width);
 
 
 
@@ -360,10 +362,10 @@ class App {
 
     this.init();
     document.getElementById("heigth").disabled = false;
-    document.getElementById("heigth").value=400;
+    // document.getElementById("heigth").value=400;
 
     document.getElementById("width").disabled = false;
-    document.getElementById("width").value=400;
+    // document.getElementById("width").value=400;
 
 
   }
